@@ -30,13 +30,14 @@ class MapsRoutes {
     late PolylinePoints routePoints = PolylinePoints();
     List<LatLng> routeCoordinates = [];
 
-    /// If the coordinates are not null, it creates a route between the two points
-    PolylineResult result = await routePoints.getRouteBetweenCoordinates(
-      googleApiKey,
-      PointLatLng(startLat, startLon),
-      PointLatLng(endLat, endLon),
-      travelMode: travelMode,
-    );
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+        googleApiKey: googleAPiKey,
+        request: PolylineRequest(
+        origin: PointLatLng(startLat, startLon),
+        destination: PointLatLng(endLat, endLon),
+        mode: TravelMode.driving,
+        ),
+);
 
     /// Adds coordinates to the route coordinates list
     result.points.forEach((PointLatLng point) {
