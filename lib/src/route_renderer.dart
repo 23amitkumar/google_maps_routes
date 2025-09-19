@@ -31,7 +31,7 @@ class MapsRoutes {
     List<LatLng> routeCoordinates = [];
 
     PolylineResult result = await routePoints.getRouteBetweenCoordinates(
-        googleApiKey: googleAPiKey,
+        googleApiKey: googleApiKey,
         request: PolylineRequest(
         origin: PointLatLng(startLat, startLon),
         destination: PointLatLng(endLat, endLon),
