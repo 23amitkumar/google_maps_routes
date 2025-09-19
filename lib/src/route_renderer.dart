@@ -30,7 +30,7 @@ class MapsRoutes {
     late PolylinePoints routePoints = PolylinePoints();
     List<LatLng> routeCoordinates = [];
 
-    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+    PolylineResult result = await routePoints.getRouteBetweenCoordinates(
         googleApiKey: googleAPiKey,
         request: PolylineRequest(
         origin: PointLatLng(startLat, startLon),
